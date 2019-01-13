@@ -1,10 +1,7 @@
 @extends('admin.main')
 @section('content')
     <h2>Category</h2>
-    <ul class="list-inline">
-        <li class="list-inline-item"><a href="{{ url('category') }}">View All Category</a></li>
-        <li class="list-inline-item"><a href="{{ url('category/create') }}">Create New Category</a></li>
-    </ul>
+    @include('category.submenu')
 
     <div class="row">
         <div class="col-12"> 

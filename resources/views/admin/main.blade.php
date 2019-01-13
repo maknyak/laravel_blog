@@ -21,10 +21,10 @@
                         <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Post</a>
+                        <a class="nav-link" href="{{ url('post') }}">Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categories</a>
+                        <a class="nav-link" href="{{ url('category') }}">Category</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">User</a>
