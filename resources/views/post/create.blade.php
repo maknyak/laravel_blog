@@ -6,11 +6,12 @@
 <div class="row">
     <div class="col-8">
         @include('common.error')
+        
 
         {!! Form::open(array('url' => 'post', 'files' => true)) !!}
             <div class="form-group">
             {!! Form::label('category_id', 'Category') !!}
-            {!! Form::select('category_id', $categories, ['' => 'Select Category'], array('class' => 'form-control')) !!}
+            {!! Form::select('category_id', $categories, null, ['placeholder' => 'Select Category', 'class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">

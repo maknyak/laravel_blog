@@ -6,30 +6,30 @@
     <div class="col-8">
         @include('common.error')
 
-        {!! Form::open(array('url' => 'post', 'files' => true)) !!}
+        {!! Form::model($post, ['route' => ['post.update', $post->id], 'method' => 'PUT', 'files' => true])!!}
             <div class="form-group">
             {!! Form::label('category_id', 'Category') !!}
-            {!! Form::select('category_id', $categories, ['' => 'Select Category'], array('class' => 'form-control')) !!}
+            {!! Form::select('category_id', $categories, null, ['placeholder' => 'Select Category', 'class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
             {!! Form::label('title', 'Title') !!}
-            {!! Form::text('title', $post->title, array('class' => 'form-control')) !!}
+            {!! Form::text('title', null, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">
             {!! Form::label('author', 'Author') !!}
-            {!! Form::text('author', $post->author, array('class' => 'form-control')) !!}
+            {!! Form::text('author', null, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">
             {!! Form::label('short_description', 'Short Description') !!}
-            {!! Form::text('short_description', $post->short_description, array('class' => 'form-control')) !!}
+            {!! Form::text('short_description', null, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">
             {!! Form::label('description', 'Description') !!}
-            {!! Form::textarea('description', $post->description, array('class' => 'form-control')) !!}
+            {!! Form::textarea('description', null, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">
