@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use Validator;
+use File;
 use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
@@ -106,6 +107,9 @@ class PostController extends Controller
 
     public function destroy($id) {
         $post = Post::find($id);
+        $imgpath = 'img/posts/' . $post->image;
+        File::delete($imgpath);
+
         $post->delete();
 
         Session::flash('post_alert', 'Post has been deleted.');
