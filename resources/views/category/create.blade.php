@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<h2>Add New Category</h2>
+<h2>Add Category</h2>
 @include('category.submenu')
 
 <div class="row">
