@@ -1,4 +1,4 @@
-@extends('admin.adminlayout')
+@extends('admin.layout')
 @section('content')
 <h2>Add Category</h2>
 @include('admin.category.submenu')
