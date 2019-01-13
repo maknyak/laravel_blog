@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<h2>Posts</h2>
+<h2>Post</h2>
 @include('post.submenu')
 <div class="row">
     <div class="col-12">
