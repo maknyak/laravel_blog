@@ -1,7 +1,7 @@
-@extends('admin.main')
+@extends('admin.adminlayout')
 @section('content')
 <h2>Post</h2>
-@include('post.submenu')
+@include('admin.post.submenu')
 <div class="row">
     <div class="col-12">
         @if (Session::has('post_alert'))
@@ -28,9 +28,9 @@
                     <tr>
                         <td>{{$post->title}}</td>
                         <td>{{$post->author}}</td>
-                        <td><a class="btn btn-warning btn-sm" href="{{ url('post/'. $post->id .'/edit') }}">Edit</a></td>
+                        <td><a class="btn btn-warning btn-sm" href="{{ url('admin/post/'. $post->id .'/edit') }}">Edit</a></td>
                         <td>
-                            {!! Form::open(array('url' => 'post/'. $post->id, 'method' => 'DELETE')) !!}
+                            {!! Form::open(array('url' => 'admin/post/'. $post->id, 'method' => 'DELETE')) !!}
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
                             <button class="btn btn-danger btn-sm">Delete</button>

@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function index() {
         $posts = Post::all();
-        return view('post.index')->with('posts', $posts);
+        return view('admin.post.index')->with('posts', $posts);
     }
 
     public function create() {
@@ -23,7 +23,7 @@ class PostController extends Controller
             $categories[$category->id] = $category->name;
         }
         
-        return view('post.create')->with('categories', $categories);
+        return view('admin.post.create')->with('categories', $categories);
     }
 
     public function store(Request $request) {
@@ -37,7 +37,7 @@ class PostController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('post/create')->withInput()->withErrors($validator);
+            return redirect('admin/post/create')->withInput()->withErrors($validator);
         }
 
         
@@ -57,7 +57,7 @@ class PostController extends Controller
         $post->save();
 
         Session::flash('post_alert', 'Post has been saved.');
-        return redirect('post');
+        return redirect('admin/post');
     }
 
     public function edit($id) {
@@ -68,7 +68,7 @@ class PostController extends Controller
             $categories[$category->id] = $category->name;
         }
 
-        return view('post.edit')->with(['post' => $post, 'categories' => $categories]);
+        return view('admin.post.edit')->with(['post' => $post, 'categories' => $categories]);
     }
 
     public function update(Request $request, $id) {
@@ -82,7 +82,7 @@ class PostController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('post/'. $id .'/edit')->withInput()->withErrors($validator);
+            return redirect('admin/post/'. $id .'/edit')->withInput()->withErrors($validator);
         }
 
         if ($request->file('image') != '') {
@@ -102,7 +102,7 @@ class PostController extends Controller
         $post->save();
 
         Session::flash('post_alert', 'Post has been updated.');
-        return redirect('post');
+        return redirect('admin/post');
     }
 
     public function destroy($id) {
@@ -113,6 +113,6 @@ class PostController extends Controller
         $post->delete();
 
         Session::flash('post_alert', 'Post has been deleted.');
-        return redirect('post');
+        return redirect('admin/post');
     }
 }

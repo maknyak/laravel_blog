@@ -20,6 +20,6 @@ Route::get('admin/', function() {
 });
 
 Route::group(['middleware' => ['web']], function() {
-    Route::resource('category', 'CategoryController');
-    Route::resource('post', 'PostController');
+    Route::resource('admin/category', 'CategoryController');
+    Route::resource('admin/post', 'PostController');
 });

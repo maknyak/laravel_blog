@@ -21,10 +21,10 @@
                         <a class="nav-link" href="#">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('post') }}">Post</a>
+                        <a class="nav-link" href="{{ url('admin/post') }}">Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('category') }}">Category</a>
+                        <a class="nav-link" href="{{ url('admin/category') }}">Category</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">User</a>
