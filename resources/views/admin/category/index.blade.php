@@ -17,9 +17,7 @@
             <table class="table table-sm">
                 <thead>
                     <tr>
-                        <th>Category Name</th>
-                        <th class="text-center"></th>
-                        <th class="text-center"></th>
+                        <th colspan="2">Category Name</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,9 +25,9 @@
                         @foreach($categories as $categori) 
                         <tr>
                             <td>{{ $categori->name }}</td>
-                            <td class="text-center"><a class="btn btn-primary btn-sm" href="{{ url('admin/category/'. $categori->id .'/edit') }}">Edit</a></td>
-                            <td class="text-center">
-                                {!! Form::open(array('url' => 'admin/category/'. $categori->id, 'method' => 'DELETE')) !!}
+                            <td class="text-right">
+                                <a class="btn btn-warning btn-sm" href="{{ url('admin/category/'. $categori->id .'/edit') }}">Edit</a>
+                                {!! Form::open(array('url' => 'admin/category/'. $categori->id, 'method' => 'DELETE', 'class' => 'd-inline')) !!}
                                 {!! csrf_field() !!}
                                 {!! method_field('DELETE') !!}
                                 <button class="btn btn-danger btn-sm">Delete</button>

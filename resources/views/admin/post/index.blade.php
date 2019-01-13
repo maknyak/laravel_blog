@@ -13,12 +13,11 @@
         </div>
         @endif
 
-        <table class="table">
+        <table class="table table-sm">
             <thead>
                 <tr>
                     <th>Title</th>
                     <th>Author</th>
-                    <th></th>
                     <th></th>
                 </tr>
             </thead>
@@ -28,9 +27,9 @@
                     <tr>
                         <td>{{$post->title}}</td>
                         <td>{{$post->author}}</td>
-                        <td><a class="btn btn-warning btn-sm" href="{{ url('admin/post/'. $post->id .'/edit') }}">Edit</a></td>
-                        <td>
-                            {!! Form::open(array('url' => 'admin/post/'. $post->id, 'method' => 'DELETE')) !!}
+                        <td class="text-right">
+                            <a class="btn btn-warning btn-sm" href="{{ url('admin/post/'. $post->id .'/edit') }}">Edit</a>
+                            {!! Form::open(array('url' => 'admin/post/'. $post->id, 'method' => 'DELETE', 'class' => 'd-inline')) !!}
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
                             <button class="btn btn-danger btn-sm">Delete</button>
