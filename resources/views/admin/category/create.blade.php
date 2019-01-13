@@ -1,13 +1,13 @@
-@extends('admin.main')
+@extends('admin.adminlayout')
 @section('content')
 <h2>Add Category</h2>
-@include('category.submenu')
+@include('admin.category.submenu')
 
 <div class="row">
     <div class="col-6">
-        @include('common.error')
+        @include('admin.common.error')
 
-        {!! Form::open(array('url' => 'category')) !!}
+        {!! Form::open(array('url' => 'admin/category')) !!}
             <div class="form-group">
             {!! Form::label('name', 'Category Name') !!}
             {!! Form::text('name', null, array('class' => 'form-control')) !!}

@@ -1,7 +1,7 @@
-@extends('admin.main')
+@extends('admin.adminlayout')
 @section('content')
     <h2>Category</h2>
-    @include('category.submenu')
+    @include('admin.category.submenu')
 
     <div class="row">
         <div class="col-12"> 
@@ -27,9 +27,9 @@
                         @foreach($categories as $categori) 
                         <tr>
                             <td>{{ $categori->name }}</td>
-                            <td class="text-center"><a class="btn btn-primary btn-sm" href="{{ url('category/'. $categori->id .'/edit') }}">Edit</a></td>
+                            <td class="text-center"><a class="btn btn-primary btn-sm" href="{{ url('admin/category/'. $categori->id .'/edit') }}">Edit</a></td>
                             <td class="text-center">
-                                {!! Form::open(array('url' => 'category/'. $categori->id, 'method' => 'DELETE')) !!}
+                                {!! Form::open(array('url' => 'admin/category/'. $categori->id, 'method' => 'DELETE')) !!}
                                 {!! csrf_field() !!}
                                 {!! method_field('DELETE') !!}
                                 <button class="btn btn-danger btn-sm">Delete</button>

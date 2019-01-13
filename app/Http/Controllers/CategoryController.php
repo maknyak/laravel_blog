@@ -11,11 +11,11 @@ class CategoryController extends Controller
 {
     public function index() {
         $categories = Category::all();
-        return view('category.index')->with('categories', $categories);
+        return view('admin.category.index')->with('categories', $categories);
     }
 
     public function create() {
-        return view('category.create');
+        return view('admin.category.create');
     }
 
     public function store(Request $request) {
@@ -24,7 +24,7 @@ class CategoryController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('category/create')->withInput()->withErrors($validator);
+            return redirect('admin/category/create')->withInput()->withErrors($validator);
         }
 
         $category = new Category;
@@ -32,12 +32,12 @@ class CategoryController extends Controller
         $category->save();
 
         Session::flash('category_alert', 'New category is created');
-        return redirect('category');
+        return redirect('admin/category');
     }
 
     public function edit($id) {
         $category = Category::findorfail($id);
-        return view('category.edit')->with('category', $category);
+        return view('admin.category.edit')->with('category', $category);
     }
 
     public function update(Request $request, $id) {
@@ -46,7 +46,7 @@ class CategoryController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('category/'. $id .'/edit')->withInput()->withErrors($validator);
+            return redirect('admin/category/'. $id .'/edit')->withInput()->withErrors($validator);
         }
 
         $category = Category::find($id);
@@ -54,7 +54,7 @@ class CategoryController extends Controller
         $category->save();
 
         Session::flash('category_alert', 'Category has been update');
-        return redirect('category');
+        return redirect('admin/category');
     }
 
     public function destroy($id) {
@@ -62,6 +62,6 @@ class CategoryController extends Controller
         $category->delete();
 
         Session::flash('category_alert', 'Category has beed delete');
-        return redirect('category');
+        return redirect('admin/category');
     }
 }

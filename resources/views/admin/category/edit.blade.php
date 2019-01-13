@@ -1,16 +1,16 @@
-@extends('admin.main')
+@extends('admin.adminlayout')
 @section('content')
 <h2>Edit Category</h2>
-@include('category.submenu')
+@include('admin.category.submenu')
 
 <div class="row">
     <div class="col-6">
-        @include('common.error')
+        @include('admin.common.error')
 
         {!! Form::model($category, array('route' => array('category.update', $category->id), 'method' => 'PUT')) !!}
             <div class="form-group">
             {!! Form::label('name', 'Category Name') !!}
-            {!! Form::text('name', $category->name, array('class' => 'form-control')) !!}
+            {!! Form::text('name', null, array('class' => 'form-control')) !!}
             </div>
             {!! Form::submit('Save', array('class' => 'btn btn-primary')) !!}
         {!! Form::close() !!}
