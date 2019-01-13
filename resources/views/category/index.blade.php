@@ -24,19 +24,19 @@
                 </thead>
                 <tbody>
                     @if(count($categories) > 0)
-                    @foreach($categories as $categori) 
-                    <tr>
-                        <td>{{ $categori->name }}</td>
-                        <td class="text-center"><a class="btn btn-primary btn-sm" href="{{ url('category/'. $categori->id .'/edit') }}">Edit</a></td>
-                        <td class="text-center">
-                            {!! Form::open(array('url' => 'category/'. $categori->id, 'method' => 'DELETE')) !!}
-                            {!! csrf_field() !!}
-                            {!! method_field('DELETE') !!}
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                            {!! Form::close() !!}
-                        </td>
-                    </tr>
-                    @endforeach
+                        @foreach($categories as $categori) 
+                        <tr>
+                            <td>{{ $categori->name }}</td>
+                            <td class="text-center"><a class="btn btn-primary btn-sm" href="{{ url('category/'. $categori->id .'/edit') }}">Edit</a></td>
+                            <td class="text-center">
+                                {!! Form::open(array('url' => 'category/'. $categori->id, 'method' => 'DELETE')) !!}
+                                {!! csrf_field() !!}
+                                {!! method_field('DELETE') !!}
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                                {!! Form::close() !!}
+                            </td>
+                        </tr>
+                        @endforeach
                     @else
                     <tr>
                         <td class="text-center">No Data</td>

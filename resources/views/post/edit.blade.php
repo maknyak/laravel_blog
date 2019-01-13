@@ -2,7 +2,6 @@
 @section('content')
 <h2>Create Post</h2>
 @include('post.submenu')
-
 <div class="row">
     <div class="col-8">
         @include('common.error')
@@ -15,22 +14,22 @@
 
             <div class="form-group">
             {!! Form::label('title', 'Title') !!}
-            {!! Form::text('title', null, array('class' => 'form-control')) !!}
+            {!! Form::text('title', $post->title, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">
             {!! Form::label('author', 'Author') !!}
-            {!! Form::text('author', null, array('class' => 'form-control')) !!}
+            {!! Form::text('author', $post->author, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">
             {!! Form::label('short_description', 'Short Description') !!}
-            {!! Form::text('short_description', null, array('class' => 'form-control')) !!}
+            {!! Form::text('short_description', $post->short_description, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">
             {!! Form::label('description', 'Description') !!}
-            {!! Form::textarea('description', null, array('class' => 'form-control')) !!}
+            {!! Form::textarea('description', $post->description, array('class' => 'form-control')) !!}
             </div>
 
             <div class="form-group">

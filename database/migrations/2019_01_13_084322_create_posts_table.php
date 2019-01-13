@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->string('title');
             $table->string('author');
-            $table->string('images');
+            $table->string('image');
             $table->text('short_description');
             $table->longtext('description');
             $table->timestamps();
